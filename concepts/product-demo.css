@@ -6,3 +6,4 @@
 .project-table-wrap{position:relative}.sr-only{left:0;top:0}.kanban-column,.activity-panel,.focus-panel,.stats article{min-width:0}
 .table-scroll-note{display:none}@media(max-width:700px){.table-scroll-note{display:block;font-size:7px;color:#8d99ae;margin:10px 0}}
 @media(max-width:700px){.filter-tabs{gap:12px;flex-wrap:wrap}.panel-heading{flex-wrap:wrap}.run-row .run-title{min-height:30px}.retry-button{min-height:32px;min-width:48px}.gallery-controls button,.view-switch button{min-height:28px}}
+.export-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 14px}.demo-controls>div{display:flex;flex-wrap:wrap;gap:6px 14px}

@@ -1,0 +1,17 @@
+/* Shared language control; intentionally outside individual case navigation. */
+.language-bar{position:relative;z-index:10;background:#eaece5;color:#29372f;border-bottom:1px solid #29372f20;font:12px/1.4 Arial,"Noto Sans",sans-serif;letter-spacing:normal;text-transform:none}.language-bar .language-inner{max-width:1600px;margin:auto;min-height:44px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:4px 4%}.language-bar .language-brand{font-size:10px;font-weight:600;letter-spacing:.12em}.language-bar .language-control{display:flex;gap:10px;align-items:center}.language-bar label{display:inline;margin:0;font:12px/1.4 Arial,sans-serif;letter-spacing:normal;color:inherit;white-space:nowrap}.language-bar select{display:block;box-sizing:border-box;width:auto;max-width:160px;min-height:36px;margin:0;padding:7px 24px 7px 10px;border:1px solid #29372f40;border-radius:3px;background:#f8f8f3;color:#29372f;font:13px/1.4 Arial,sans-serif;text-transform:none;letter-spacing:normal;cursor:pointer}.language-bar select:focus-visible{outline:2px solid #496453;outline-offset:2px}.language-bar .language-status{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+html:not(:lang(en)) h1,html:not(:lang(en)) h2,html:not(:lang(en)) h3,html:not(:lang(en)) button,html:not(:lang(en)) a,html:not(:lang(en)) label,html:not(:lang(en)) summary{overflow-wrap:break-word}
+html:lang(zh),html:lang(ja),html:lang(ko){word-break:normal;line-break:strict}
+html:lang(zh) body,html:lang(ja) body,html:lang(ko) body{font-family:Arial,"PingFang SC","Hiragino Sans","Yu Gothic","Malgun Gothic",sans-serif}
+html:lang(zh) h1,html:lang(zh) h2,html:lang(ja) h1,html:lang(ja) h2,html:lang(ko) h1,html:lang(ko) h2{font-family:Arial,"PingFang SC","Hiragino Sans","Yu Gothic","Malgun Gothic",sans-serif;letter-spacing:-.025em;line-height:1.22}
+html:not(:lang(en)) .hero-copy h1{font-size:clamp(42px,5.6vw,82px)}
+html:not(:lang(en)) .showcase-switcher button{white-space:normal;min-height:44px}
+html:not(:lang(en)) .offer-grid h3{min-height:0}
+html:not(:lang(en)) .case-fit h2{font-size:clamp(27px,3.1vw,42px)}
+html:not(:lang(en)) .demo-bar,html:not(:lang(en)) .demo-banner{flex-wrap:wrap}
+html:not(:lang(en)) .sidebar nav a,html:not(:lang(en)) .filter-tabs button{white-space:normal}
+@media(max-width:700px){.language-bar .language-brand{font-size:8px;letter-spacing:.05em}.language-bar .language-inner{gap:8px;padding:4px 16px}.language-bar .language-control{gap:6px}.language-bar select{max-width:124px}.language-bar label{font-size:11px}html:not(:lang(en)) .hero-copy h1{font-size:clamp(35px,9vw,54px)}html:not(:lang(en)) .hero-ctas{flex-wrap:wrap}html:not(:lang(en)) .mobile-quick-nav a{font-size:12px;white-space:normal}html:not(:lang(en)) .home-service-line{overflow-wrap:anywhere}}
+.language-bar[data-load-error=true] .language-status{position:static;display:block;width:auto;height:auto;clip-path:none;white-space:normal;padding:8px 4%;background:#fce8dd;color:#7a3523;font-size:12px}
+/* Keep Chinese headline phrases intact on narrow phones instead of orphaning a single character. */
+html:lang(zh) .hero-copy h1{text-wrap:balance}
+@media(max-width:700px){html:lang(zh) .hero-copy h1{font-size:clamp(24px,7.6vw,40px);line-height:1.35}}

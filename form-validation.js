@@ -12,7 +12,7 @@ window.validateMeaningfulForm=function(form){
  for(const field of form.querySelectorAll('input[required],textarea[required]')){
   if(!['text','email','textarea'].includes(field.type))continue;
   const value=field.value.trim(),minimum=field.minLength>0?field.minLength:1;
-  if(value.length<minimum){field.setCustomValidity(minimum>1?`Please enter at least ${minimum} characters, excluding surrounding spaces.`:'Please enter a value, not only spaces.');field.reportValidity();return false;}
+  if(value.length<minimum){field.setCustomValidity(window.I18N.t(minimum>1?`Please enter at least ${minimum} characters, excluding surrounding spaces.`:'Please enter a value, not only spaces.'));field.reportValidity();return false;}
   field.value=value;
  }
  return form.reportValidity();
