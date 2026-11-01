@@ -15,3 +15,5 @@ html:not(:lang(en)) .sidebar nav a,html:not(:lang(en)) .filter-tabs button{white
 /* Keep Chinese headline phrases intact on narrow phones instead of orphaning a single character. */
 html:lang(zh) .hero-copy h1{text-wrap:balance}
 @media(max-width:700px){html:lang(zh) .hero-copy h1{font-size:clamp(24px,7.6vw,40px);line-height:1.35}}
+/* Keep preview forms inert until their page handlers are attached. */
+html:not([data-app-ready]) form button:not([type=button]):not([type=reset]){pointer-events:none;opacity:.5}

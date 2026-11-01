@@ -11,3 +11,6 @@ function renderBriefSummary(){if(!briefData)return;const v=briefData,t=window.I1
 document.addEventListener('elvarnue:language',renderBriefSummary);
 
 document.addEventListener('elvarnue:language',()=>{if(activeProject)setView(view)});
+
+// Signal when this page has bound its controls and form handlers.
+document.documentElement.dataset.appReady='true';

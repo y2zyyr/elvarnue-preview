@@ -19,3 +19,6 @@ document.querySelector('#export-runs-txt').onclick=()=>{
 };
 
 document.addEventListener('elvarnue:language',render);
+
+// Signal when this page has bound its controls and form handlers.
+document.documentElement.dataset.appReady='true';

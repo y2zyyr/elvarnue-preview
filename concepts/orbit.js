@@ -13,3 +13,6 @@ document.querySelector('#export-projects-txt').onclick=()=>{
  for(const p of projects)lines.push(t('Project')+': '+(p.userContent?p.title:t(p.title)),t('Owner')+': '+p.owner,t('Focus area')+': '+t(p.area),t('Status')+': '+t(label[p.status]),t('Priority')+': '+t(p.priority),t('Project note')+': '+(p.userContent?p.note:t(p.note)),'');
  window.I18N.download(lines.join('\n'),'orbit-workspace.txt');
 };
+
+// Signal when this page has bound its controls and form handlers.
+document.documentElement.dataset.appReady='true';

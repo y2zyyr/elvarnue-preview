@@ -85,3 +85,6 @@ document.querySelector('#restore-text-draft').onclick=()=>{const values=readText
 document.querySelector('#clear-text-draft').onclick=()=>{try{sessionStorage.removeItem(draftKey);draftButtons(false);draftStatus.textContent='Saved draft cleared. Text currently in the form has not been changed.';}catch{draftStatus.textContent='Could not clear browser storage. Your current form has not changed.';}};
 
 document.addEventListener('elvarnue:language',()=>document.querySelector('[data-showcase][aria-pressed="true"]')?.click());
+
+// Signal when this page has bound its controls and form handlers.
+document.documentElement.dataset.appReady='true';

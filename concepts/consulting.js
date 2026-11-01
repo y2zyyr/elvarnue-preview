@@ -12,3 +12,6 @@ const form=document.querySelector('#conversation-form');let brief='',briefData=n
 
 function renderBriefSummary(){if(!briefData)return;const v=briefData,t=window.I18N.t;document.querySelector('#conversation-summary').textContent=`${v.company||v.name}\n${t(v.topic)} · ${t(v.format)}\n\n${v.context}`;}
 document.addEventListener('elvarnue:language',renderBriefSummary);
+
+// Signal when this page has bound its controls and form handlers.
+document.documentElement.dataset.appReady='true';

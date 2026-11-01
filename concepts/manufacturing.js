@@ -8,3 +8,6 @@ const form=document.querySelector('#rfq-form');let brief='',briefData=null;form.
 
 function renderBriefSummary(){if(!briefData)return;const v=briefData,t=window.I18N.t;document.querySelector('#brief-summary').textContent=`${v.company||v.name}\n${t(v.process)} · ${t(v.material)}\n${t('Quantity')}: ${v.quantity} · ${t(v.stage)}\n\n${v.requirements}`;}
 document.addEventListener('elvarnue:language',renderBriefSummary);
+
+// Signal when this page has bound its controls and form handlers.
+document.documentElement.dataset.appReady='true';
