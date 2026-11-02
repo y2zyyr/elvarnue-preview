@@ -35,3 +35,10 @@ form label .optional{font-size:7px;font-weight:400;opacity:.6;margin-left:5px}.m
 .overview-controls{position:sticky;top:calc(-1 * var(--overview-pad));z-index:3;display:flex;justify-content:flex-end;background:var(--paper);margin:calc(-1 * var(--overview-pad)) calc(-1 * var(--overview-pad)) 20px;padding:12px var(--overview-pad);border-bottom:1px solid var(--line)}
 @media(max-width:620px){#project-dialog{--overview-pad:23px}}
 .overview-controls .close-dialog{margin:0;min-height:44px}
+/* Explain the commercial purpose before the demo mechanics. */
+.project-meta small.project-outcome{display:block;max-width:36em;font-size:13px;line-height:1.65;color:#58634f;margin-top:8px;letter-spacing:normal}
+/* A reference brief never fills, submits or modifies customer fields. */
+.brief-example{border:1px solid #637652;margin:0 0 22px;background:#24302055}.brief-example>summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px;padding:12px 15px;font-size:13px;line-height:1.6;color:#d4dfc9;list-style:none;cursor:pointer}.brief-example>summary::-webkit-details-marker{display:none}.brief-example>summary>span{flex-shrink:0}.brief-example[open]>summary>span{transform:rotate(45deg)}.brief-example-body{padding:0 15px 16px}.brief-example-body p{font-size:13px;line-height:1.85;color:#c0ceb3;margin:0 0 12px;max-width:42em}.brief-example-body small{display:block;font-size:11px;line-height:1.7;color:#aebf9d}
+@media(max-width:700px){.project-meta small.project-outcome{font-size:13px}.brief-example>summary{padding:12px}.brief-example-body{padding:0 12px 14px}}
+/* Give long translated labels and contact details room on narrow phones. */
+@media(max-width:430px){.contact .form-row{flex-direction:column;gap:0}.contact .form-row>label{width:100%}}

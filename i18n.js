@@ -6,7 +6,7 @@ const normalise=s=>String(s).replace(/\s+/g,' ').trim();
 const storageKey='elvarnue-language-v1',catalogues=new Map(),originalText=new WeakMap(),originalAttributes=new WeakMap();
 let language='en',catalogue={},patterns=[],folded=new Map(),observer,bar,selector,status,requestId=0,pending=false;
 const unsupported=new Set(['SCRIPT','STYLE','NOSCRIPT','TEXTAREA','PRE','CODE']);
-const ignored=element=>!element||Boolean(element.closest('[translate="no"], [data-language-ui], [data-user-content]'))||unsupported.has(element.tagName);
+const ignored=(element,attributes=false)=>!element||Boolean(element.closest('[translate="no"], [data-language-ui], [data-user-content]'))||(unsupported.has(element.tagName)&&!(attributes&&element.tagName==='TEXTAREA'));
 function compile(){
  folded=new Map(Object.entries(catalogue).map(([a,b])=>[a.toLowerCase(),b]));
  patterns=Object.entries(catalogue).filter(([key,value])=>value&&/\{\{\d+\}\}/.test(key)).map(([key,value])=>{
@@ -38,7 +38,8 @@ function translateNode(node){
 }
 const attributeNames=['aria-label','alt','placeholder','title','content'];
 function translateElement(element){
- if(ignored(element))return;
+ // Translate labels and placeholders without translating the typed textarea value.
+ if(ignored(element,true))return;
  // Freeze implicit option values before changing display labels. Application state stays canonical.
  if(element.tagName==='OPTION'&&!element.hasAttribute('value'))element.setAttribute('value',element.textContent);
  let attrs=originalAttributes.get(element);if(!attrs){attrs={};originalAttributes.set(element,attrs);}
@@ -75,7 +76,7 @@ async function setLanguage(next,{initial=false}={}){
   let nextCatalogue={};
   if(next!=='en'){
    if(!catalogues.has(next)){
-    const response=await fetch('/elvarnue-preview/i18n/'+next+'.json?v=ddc17d9f9c');if(!response.ok)throw new Error('catalogue');
+    const response=await fetch('/elvarnue-preview/i18n/'+next+'.json?v=bf1a8c892d');if(!response.ok)throw new Error('catalogue');
     const data=await response.json();if(!data||typeof data!=='object'||Array.isArray(data))throw new Error('catalogue');catalogues.set(next,data);
    }
    nextCatalogue=catalogues.get(next);
