@@ -75,7 +75,7 @@ async function setLanguage(next,{initial=false}={}){
   let nextCatalogue={};
   if(next!=='en'){
    if(!catalogues.has(next)){
-    const response=await fetch('/elvarnue-preview/i18n/'+next+'.json?v=93b209a9e1');if(!response.ok)throw new Error('catalogue');
+    const response=await fetch('/elvarnue-preview/i18n/'+next+'.json?v=ddc17d9f9c');if(!response.ok)throw new Error('catalogue');
     const data=await response.json();if(!data||typeof data!=='object'||Array.isArray(data))throw new Error('catalogue');catalogues.set(next,data);
    }
    nextCatalogue=catalogues.get(next);
