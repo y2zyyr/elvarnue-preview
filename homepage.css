@@ -42,3 +42,4 @@ form label .optional{font-size:7px;font-weight:400;opacity:.6;margin-left:5px}.m
 @media(max-width:700px){.project-meta small.project-outcome{font-size:13px}.brief-example>summary{padding:12px}.brief-example-body{padding:0 12px 14px}}
 /* Give long translated labels and contact details room on narrow phones. */
 @media(max-width:430px){.contact .form-row{flex-direction:column;gap:0}.contact .form-row>label{width:100%}}
+.delivery-status{font-size:12px;line-height:1.7;color:#c0ceb3;margin:18px 0 12px;max-width:40em}
